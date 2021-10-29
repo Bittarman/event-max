@@ -14,8 +14,12 @@
         <input name="name" type="text" maxlength="255" />
     </div>
     <div class="input-group">
-        <label for="date">Date:</label>
-        <input type="date" name="date" />
+        <label for="date">Start Date:</label>
+        <input type="date" name="start_date" />
+    </div>
+    <div class="input-group">
+        <label for="date">End Date:</label>
+        <input type="date" name="end_date" />
     </div>
     <input type="submit" value="Save" />
 </form>

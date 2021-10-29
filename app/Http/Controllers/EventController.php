@@ -8,6 +8,12 @@ use App\Http\Requests\StoreEventRequest;
 
 class EventController extends Controller
 {
+    public function search()
+    {
+        $term = request()->post('q');
+        return view('events.search', ['events' => Event::search($term), 'term'=> $term]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -36,7 +42,7 @@ class EventController extends Controller
      */
     public function store(StoreEventRequest $request)
     {
-        $validated = $request->safe()->only('name', 'date');
+        $validated = $request->safe()->only('name', 'start_date', 'end_date');
         $event = Event::create($validated);
         return redirect()->route('events.index');
     }
