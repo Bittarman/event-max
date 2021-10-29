@@ -7,7 +7,7 @@
       <tr>
           <td>{{ $event->id }}</td>
           <td>{{ $event->name }}</td>
-          <td>{{ $event->date->format('d m Y') }}</td>
+          <td>{{ $event->start_date?->format('d/m/Y') }} - {{ $event->end_date?->format('d/m/Y') }}</td>
           <td>
               <form method="POST" action="{{ route('events.destroy', ['event' => $event]) }}">
                   @csrf

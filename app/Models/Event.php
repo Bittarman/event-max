@@ -11,8 +11,9 @@ class Event extends Model
 
     protected $fillable = [
         'name',
-        'date',
+        'start_date',
+        'end_date',
     ];
 
-    protected $dates = ['date'];
+    protected $dates = ['start_date', 'end_date'];
 }

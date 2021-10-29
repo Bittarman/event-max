@@ -36,7 +36,7 @@ class EventController extends Controller
      */
     public function store(StoreEventRequest $request)
     {
-        $validated = $request->safe()->only('name', 'date');
+        $validated = $request->safe()->only('name', 'start_date', 'end_date');
         $event = Event::create($validated);
         return redirect()->route('events.index');
     }

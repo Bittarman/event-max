@@ -5,6 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use DateTimeImmutable;
+use DateInterval;
 
 class EventFactory extends Factory
 {
@@ -15,9 +16,12 @@ class EventFactory extends Factory
      */
     public function definition()
     {
+        $start = new DateTimeImmutable(rand(1,10) . ' days');
+        $end = $start->add(new DateInterval('P' . rand(1,10) . 'D'));
         return [
             'name' => $this->faker->name(),
-            'date' => new DateTimeImmutable(rand(1,10) . ' days'),
+            'start_date' => $start,
+            'end_date' => $end,
         ];
     }
 }

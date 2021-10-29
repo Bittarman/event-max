@@ -17,7 +17,8 @@ class StoreEventRequest extends FormRequest
     {
         return [
             'name' => 'required|unique:events|max:255',
-            'date' => 'required|date'
+            'start_date' => 'required|date',
+            'end_date' => 'required|date',
         ];
     }
 }
