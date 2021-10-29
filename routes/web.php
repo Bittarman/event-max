@@ -21,3 +21,5 @@ Route::get('/', function () {
 Route::resources([
     'events' => EventController::class
 ]);
+
+Route::post('/search', [EventController::class, 'search'], 'events.search');

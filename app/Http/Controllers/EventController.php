@@ -8,6 +8,12 @@ use App\Http\Requests\StoreEventRequest;
 
 class EventController extends Controller
 {
+    public function search()
+    {
+        $term = request()->post('q');
+        return view('events.search', ['events' => Event::search($term), 'term'=> $term]);
+    }
+
     /**
      * Display a listing of the resource.
      *
